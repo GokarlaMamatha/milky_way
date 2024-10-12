@@ -35,3 +35,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::resource('students', App\Http\Controllers\StudentController::class);
+Route::resource('ammavadis', App\Http\Controllers\AmmavadiController::class);

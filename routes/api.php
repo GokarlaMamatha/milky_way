@@ -21,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::resource('students', App\Http\Controllers\API\StudentAPIController::class)
     ->except(['create', 'edit']);
+
+Route::resource('ammavadis', App\Http\Controllers\API\AmmavadiAPIController::class)
+    ->except(['create', 'edit']);

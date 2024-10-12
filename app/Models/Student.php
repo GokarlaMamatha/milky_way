@@ -12,7 +12,35 @@ class Student extends Model
         'name',
         'class',
         'section',
-        'roll_no'
+        'roll_no',
+        'gender',
+        'medium',
+        'doa',
+        'adminssion_no',
+        'photo',
+        'mother_name',
+        'father_name',
+        'mother_occupation',
+        'father_occupation',
+        'phone',
+        'religion',
+        'cast',
+        'address',
+        'house_no',
+        'village',
+        'mandal',
+        'city',
+        'zipcode',
+        'ps_name',
+        'ps_address_code',
+        'ps_village',
+        'ps_mandal',
+        'ps_city',
+        'ps_class',
+        'ps_completion_year',
+        'ps_registration_no',
+        'moles'
+
     ];
 
     protected $casts = [

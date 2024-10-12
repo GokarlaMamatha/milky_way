@@ -12,3 +12,10 @@
         <p>Students</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('ammavadis.index') }}" class="nav-link {{ Request::is('ammavadis*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Ammavadis</p>
+    </a>
+</li>
