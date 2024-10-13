@@ -46,10 +46,19 @@
             {!! Form::text('adminssion_no', null, ['class' => 'form-control', 'required', 'maxlength' => 255]) !!}
         </div>
 
-        <div class="form-group col-sm-4">
+        {{-- <div class="form-group col-sm-4">
             {!! Form::label('photo', 'Upload Student Image:') !!}
             {!! Form::text('photo', null, ['class' => 'form-control', 'required', 'maxlength' => 255]) !!}
-        </div>
+        </div> --}}
+
+        @include('common.image.single-image', [
+            'field_label' => 'Student Image:',
+            'field_name' => 'photo',
+            'data' => isset($student) ? $student->photo : null,
+            'path' => STUDENT_IMAGE_PATH,
+        ])
+        <div class="clearfix"></div>
+
         <div class="form-group col-sm-4">
             {!! Form::label('religion', 'Religion:') !!}
             {!! Form::text('religion', null, ['class' => 'form-control', 'required', 'maxlength' => 255]) !!}

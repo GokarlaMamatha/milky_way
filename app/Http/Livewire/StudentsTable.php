@@ -31,6 +31,11 @@ class StudentsTable extends DataTableComponent
             Column::make("Name", "name")
                 ->sortable()
                 ->searchable(),
+            Column::make("Photo", "photo")
+                ->format(fn ($image) => $image != '' ? '<img src="' . STUDENT_IMAGE_PATH . $image  . '" width="50">' : '')
+                ->html()
+                ->sortable()
+                ->searchable(),
             Column::make("Class", "class")
                 ->sortable()
                 ->searchable(),

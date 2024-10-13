@@ -6,6 +6,7 @@ use App\Http\Requests\CreateAmmavadiRequest;
 use App\Http\Requests\UpdateAmmavadiRequest;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\AmmavadiRepository;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Flash;
 
@@ -32,7 +33,8 @@ class AmmavadiController extends AppBaseController
      */
     public function create()
     {
-        return view('ammavadis.create');
+        $students = Student::pluck('name','id');
+        return view('ammavadis.create',compact('students'));
     }
 
     /**
@@ -71,14 +73,13 @@ class AmmavadiController extends AppBaseController
     public function edit($id)
     {
         $ammavadi = $this->ammavadiRepository->find($id);
-
+        $students = Student::pluck('name','id');
         if (empty($ammavadi)) {
             Flash::error('Ammavadi not found');
 
             return redirect(route('ammavadis.index'));
         }
-
-        return view('ammavadis.edit')->with('ammavadi', $ammavadi);
+        return view('ammavadis.edit',compact('students'))->with('ammavadi', $ammavadi);
     }
 
     /**

@@ -43,6 +43,12 @@ class StudentController extends AppBaseController
         $input = $request->all();
 
         $student = $this->studentRepository->create($input);
+        
+        if ($request->hasfile('photo')) {
+            $student->photo = uploadImage($request->file('photo'), STUDENT_IMAGE_PATH);
+        }
+
+        $student->save();
 
         Flash::success('Student saved successfully.');
 
@@ -93,8 +99,17 @@ class StudentController extends AppBaseController
 
             return redirect(route('students.index'));
         }
+        if ($request->hasfile('photo')) {
+            removeImage($student->photo, STUDENT_IMAGE_PATH);
+        }
 
         $student = $this->studentRepository->update($request->all(), $id);
+
+        if ($request->hasfile('photo')) {
+            $student->photo = uploadImage($request->file('photo'), STUDENT_IMAGE_PATH);
+        }
+
+        $student->save();
 
         Flash::success('Student updated successfully.');
 
