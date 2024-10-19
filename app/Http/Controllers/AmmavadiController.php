@@ -33,7 +33,7 @@ class AmmavadiController extends AppBaseController
      */
     public function create()
     {
-        $students = Student::pluck('name','id');
+        $students = Student::pluck('adminssion_no','id');
         return view('ammavadis.create',compact('students'));
     }
 
@@ -73,7 +73,7 @@ class AmmavadiController extends AppBaseController
     public function edit($id)
     {
         $ammavadi = $this->ammavadiRepository->find($id);
-        $students = Student::pluck('name','id');
+        $students = Student::pluck('adminssion_no','id');
         if (empty($ammavadi)) {
             Flash::error('Ammavadi not found');
 

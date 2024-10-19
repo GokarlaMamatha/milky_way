@@ -19,3 +19,15 @@
         <p>Ammavadis</p>
     </a>
 </li>
+<hr/>
+<li class="nav-item">
+<form method="POST"  class="nav-link" action="{{ route('logout') }}">
+    @csrf
+    <i class="nav-icon fas fa-lock"></i>
+    <a href="route('logout')"
+            onclick="event.preventDefault();
+                        this.closest('form').submit();">
+        {{ __('Log Out') }}
+    </a>
+</form>
+</li>

@@ -39,7 +39,10 @@ class Student extends Model
         'ps_class',
         'ps_completion_year',
         'ps_registration_no',
-        'moles'
+        'moles',
+        'dob',
+        'aadhar_no',
+        'ration_card_no'
 
     ];
 

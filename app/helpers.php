@@ -62,3 +62,20 @@ if (!function_exists("removeImage")) {
         }
     }
 }
+
+if (!function_exists("formatDateTime")) {
+    function formatDateTime($date)
+    {
+        return $date != '' ? date('d-m-Y h:i A', strtotime($date)) : '';
+    }
+}
+
+
+if (!function_exists("formatDate")) {
+    function formatDate($date)
+    {
+        return $date != '' ? date('d-m-Y', strtotime($date)) : '';
+    }
+}
+
+

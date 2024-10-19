@@ -1,8 +1,9 @@
 <!-- Student Id Field -->
 <div class="form-group col-sm-4">
     {!! Form::label('student_id', 'Student Name:') !!}
-    {!! Form::number('student_id', $students, null, ['class' => 'form-control select2', 'required', 'placeholder' => 'Select Donor']) !!}
+    {!! Form::select('student_id', $students, null, ['class' => 'form-control select2', 'required', 'placeholder' => 'Select student number']) !!}
 </div>
+
 
 <!-- Distance From House Field -->
 <div class="form-group col-sm-4">

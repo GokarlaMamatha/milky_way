@@ -22,8 +22,7 @@
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                             <!-- User image -->
                             <li class="user-header bg-primary">
-                                <img src="https://assets.infyom.com/logo/blue_logo_150x150.png"
-                                    class="img-circle elevation-2" alt="User Image">
+                                
                                 <p>
                                     {{ Auth::user()->name }}
                                     <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
@@ -55,19 +54,17 @@
 
             <!-- Main Footer -->
             <footer class="main-footer">
-                <div class="float-right d-none d-sm-block">
-                    <b>Version</b> 3.1.0
-                </div>
-                <strong>Copyright &copy; 2014-2023 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+                <strong>Copyright &copy; 2024<a href="#"> Blind School</a>.</strong> All rights
                 reserved.
             </footer>
         </div>
         <script src="//unpkg.com/alpinejs" defer></script>
         @livewireScripts
-        <script src="../resorces/js/custom.js"></script>
+        <script src="./js/custom.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        @yield('page_scripts')
     </body>
 </x-laravel-ui-adminlte::adminlte-layout>

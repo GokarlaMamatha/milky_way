@@ -36,6 +36,9 @@ class StudentsTable extends DataTableComponent
                 ->html()
                 ->sortable()
                 ->searchable(),
+            Column::make("Admission No", "adminssion_no")
+                ->sortable()
+                ->searchable(),
             Column::make("Class", "class")
                 ->sortable()
                 ->searchable(),
