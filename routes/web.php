@@ -36,3 +36,4 @@ Auth::routes();
 
 Route::resource('students', App\Http\Controllers\StudentController::class);
 Route::resource('ammavadis', App\Http\Controllers\AmmavadiController::class);
+Route::resource('product-categories', App\Http\Controllers\ProductCategoryController::class);
