@@ -2,16 +2,19 @@
 
 namespace App\Repositories;
 
-use App\Models\ProductCategory;
+use App\Models\Products;
 use App\Repositories\BaseRepository;
 
-class ProductCategoryRepository extends BaseRepository
+class ProductsRepository extends BaseRepository
 {
     protected $fieldSearchable = [
-        'name',
+        'product_category_id',
+        'product_name',
         'image',
-        'description',
-        'type'
+        'decription',
+        'gallery',
+        'price',
+        'publish'
     ];
 
     public function getFieldsSearchable(): array
@@ -21,6 +24,6 @@ class ProductCategoryRepository extends BaseRepository
 
     public function model(): string
     {
-        return ProductCategory::class;
+        return Products::class;
     }
 }

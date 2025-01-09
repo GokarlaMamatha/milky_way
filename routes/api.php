@@ -25,5 +25,26 @@ Route::resource('students', App\Http\Controllers\API\StudentAPIController::class
 Route::resource('ammavadis', App\Http\Controllers\API\AmmavadiAPIController::class)
     ->except(['create', 'edit']);
 
-Route::resource('product-categories', App\Http\Controllers\API\ProductCategoryAPIController::class)
+Route::resource('ProductCategories', App\Http\Controllers\API\ProductCategoryAPIController::class)
+    ->except(['create', 'edit']);
+
+Route::resource('cms', App\Http\Controllers\API\CmsAPIController::class)
+    ->except(['create', 'edit']);
+
+Route::resource('ServiceCategories', App\Http\Controllers\API\ServiceCategoryAPIController::class)
+    ->except(['create', 'edit']);
+
+Route::resource('services', App\Http\Controllers\API\ServiceAPIController::class)
+    ->except(['create', 'edit']);
+
+Route::resource('ProductCategories', App\Http\Controllers\API\ProductCategoryAPIController::class)
+    ->except(['create', 'edit']);
+
+Route::resource('products', App\Http\Controllers\API\ProductsAPIController::class)
+    ->except(['create', 'edit']);
+
+Route::resource('productCategories', App\Http\Controllers\API\ProductCategoryAPIController::class)
+    ->except(['create', 'edit']);
+
+Route::resource('serviceCategories', App\Http\Controllers\API\ServiceCategoryAPIController::class)
     ->except(['create', 'edit']);

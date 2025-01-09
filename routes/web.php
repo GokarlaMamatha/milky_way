@@ -36,4 +36,10 @@ Auth::routes();
 
 Route::resource('students', App\Http\Controllers\StudentController::class);
 Route::resource('ammavadis', App\Http\Controllers\AmmavadiController::class);
-Route::resource('product-categories', App\Http\Controllers\ProductCategoryController::class);
+Route::resource('ProductCategories', App\Http\Controllers\ProductCategoryController::class);
+Route::resource('cms', App\Http\Controllers\CmsController::class);
+Route::resource('ServiceCategories', App\Http\Controllers\ServiceCategoryController::class);
+Route::resource('services', App\Http\Controllers\ServiceController::class);
+Route::resource('products', App\Http\Controllers\ProductsController::class);
+Route::resource('productCategories', App\Http\Controllers\ProductCategoryController::class);
+Route::resource('serviceCategories', App\Http\Controllers\ServiceCategoryController::class);

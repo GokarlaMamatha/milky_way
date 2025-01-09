@@ -5,18 +5,18 @@ namespace App\Http\Livewire;
 use Laracasts\Flash\Flash;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use App\Models\ProductCategory;
+use App\Models\ServiceCategory;
 
-class ProductCategoriesTable extends DataTableComponent
+class ServiceCategoriesTable extends DataTableComponent
 {
-    protected $model = ProductCategory::class;
+    protected $model = ServiceCategory::class;
 
     protected $listeners = ['deleteRecord' => 'deleteRecord'];
 
     public function deleteRecord($id)
     {
-        ProductCategory::find($id)->delete();
-        Flash::success('Product Category deleted successfully.');
+        ServiceCategory::find($id)->delete();
+        Flash::success('Service Category deleted successfully.');
         $this->emit('refreshDatatable');
     }
 
@@ -28,23 +28,20 @@ class ProductCategoriesTable extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make("Name", "name")
+            Column::make("Title", "title")
                 ->sortable()
                 ->searchable(),
-            Column::make("Image", "image")
+            Column::make("Slug", "slug")
                 ->sortable()
                 ->searchable(),
             Column::make("Description", "description")
                 ->sortable()
                 ->searchable(),
-            Column::make("Type", "type")
-                ->sortable()
-                ->searchable(),
             Column::make("Actions", 'id')
                 ->format(
                     fn($value, $row, Column $column) => view('common.livewire-tables.actions', [
-                        'showUrl' => route('productCategories.show', $row->id),
-                        'editUrl' => route('productCategories.edit', $row->id),
+                        'showUrl' => route('serviceCategories.show', $row->id),
+                        'editUrl' => route('serviceCategories.edit', $row->id),
                         'recordId' => $row->id,
                     ])
                 )

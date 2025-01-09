@@ -10,36 +10,25 @@ class ProductCategory extends Model
 
     public $fillable = [
         'name',
-        'display_name',
         'image',
-        'image_alt_text',
-        'icon',
         'description',
-        'type',
-        'sort'
+        'type'
     ];
 
     protected $casts = [
         'name' => 'string',
-        'display_name' => 'string',
         'image' => 'string',
-        'image_alt_text' => 'string',
-        'icon' => 'string',
         'description' => 'string',
         'type' => 'string'
     ];
 
     public static array $rules = [
-        'name' => 'required|string|max:255',
-        'display_name' => 'nullable|string|max:255',
+        'name' => 'nullable|string|max:255',
         'image' => 'nullable|string|max:255',
-        'image_alt_text' => 'nullable|string|max:255',
-        'icon' => 'nullable|string|max:255',
-        'description' => 'nullable|string|max:65535',
+        'description' => 'required|string|max:65535',
         'type' => 'nullable|string|max:255',
         'created_at' => 'nullable',
-        'updated_at' => 'nullable',
-        'sort' => 'nullable'
+        'updated_at' => 'nullable'
     ];
 
     public function products(): \Illuminate\Database\Eloquent\Relations\HasMany

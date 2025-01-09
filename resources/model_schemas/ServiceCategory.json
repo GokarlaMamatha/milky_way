@@ -12,10 +12,10 @@
         "inView": false
     },
     {
-        "name": "name",
+        "name": "title",
         "dbType": "string",
         "htmlType": "text",
-        "validations": "nullable|string|max:255|nullable|string|max:255|nullable|string|max:255",
+        "validations": "required|string|max:255|string|max:255|string|max:255",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -24,7 +24,7 @@
         "inView": true
     },
     {
-        "name": "image",
+        "name": "slug",
         "dbType": "string",
         "htmlType": "text",
         "validations": "nullable|string|max:255|nullable|string|max:255|nullable|string|max:255",
@@ -37,21 +37,9 @@
     },
     {
         "name": "description",
-        "dbType": "text",
-        "htmlType": "textarea",
-        "validations": "required|string|max:65535|string|max:65535|string|max:65535",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "inView": true
-    },
-    {
-        "name": "type",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "nullable|string|max:255|nullable|string|max:255|nullable|string|max:255",
+        "dbType": "bigInteger,false",
+        "htmlType": "number",
+        "validations": "nullable|nullable|nullable",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -85,6 +73,6 @@
     },
     {
         "type": "relation",
-        "relation": "1tm,Product,product_category_id"
+        "relation": "1tm,Service,service_category_id"
     }
 ]

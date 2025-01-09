@@ -24,7 +24,7 @@ class ProductCategoryAPIController extends AppBaseController
 
     /**
      * Display a listing of the ProductCategories.
-     * GET|HEAD /product-categories
+     * GET|HEAD /productCategories
      */
     public function index(Request $request): JsonResponse
     {
@@ -39,7 +39,7 @@ class ProductCategoryAPIController extends AppBaseController
 
     /**
      * Store a newly created ProductCategory in storage.
-     * POST /product-categories
+     * POST /productCategories
      */
     public function store(CreateProductCategoryAPIRequest $request): JsonResponse
     {
@@ -52,7 +52,7 @@ class ProductCategoryAPIController extends AppBaseController
 
     /**
      * Display the specified ProductCategory.
-     * GET|HEAD /product-categories/{id}
+     * GET|HEAD /productCategories/{id}
      */
     public function show($id): JsonResponse
     {
@@ -68,7 +68,7 @@ class ProductCategoryAPIController extends AppBaseController
 
     /**
      * Update the specified ProductCategory in storage.
-     * PUT/PATCH /product-categories/{id}
+     * PUT/PATCH /productCategories/{id}
      */
     public function update($id, UpdateProductCategoryAPIRequest $request): JsonResponse
     {
@@ -88,7 +88,7 @@ class ProductCategoryAPIController extends AppBaseController
 
     /**
      * Remove the specified ProductCategory from storage.
-     * DELETE /product-categories/{id}
+     * DELETE /productCategories/{id}
      *
      * @throws \Exception
      */

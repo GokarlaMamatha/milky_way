@@ -89,13 +89,13 @@ class RolesAndPermissionsSeeder extends Seeder
             Permission::create(['name' => 'publish-cms']);
         }
 
-        if (Permission::where('name', 'service-categories')->first() == null) {
-            Permission::create(['name' => 'service-categories', 'type' => 1]);
-            Permission::create(['name' => 'add-service-categories']);
-            Permission::create(['name' => 'edit-service-categories']);
-            Permission::create(['name' => 'delete-service-categories']);
-            Permission::create(['name' => 'view-service-categories']);
-            Permission::create(['name' => 'publish-service-categories']);
+        if (Permission::where('name', 'service_categories')->first() == null) {
+            Permission::create(['name' => 'service_categories', 'type' => 1]);
+            Permission::create(['name' => 'add-service_categories']);
+            Permission::create(['name' => 'edit-service_categories']);
+            Permission::create(['name' => 'delete-service_categories']);
+            Permission::create(['name' => 'view-service_categories']);
+            Permission::create(['name' => 'publish-service_categories']);
         }
 
         if (Permission::where('name', 'services')->first() == null) {
