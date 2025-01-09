@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('parent')->nullable();
-            $table->bigInteger('type')->nullable();
+            $table->string('type')->nullable();
             $table->string('custom_url')->nullable();
             $table->string('banner_image')->nullable();
             $table->string('banner_title')->nullable();

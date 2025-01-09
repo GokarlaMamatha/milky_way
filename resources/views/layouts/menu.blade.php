@@ -6,7 +6,7 @@
     </a>
 </li>
 
-<li class="nav-item">
+{{-- <li class="nav-item">
     <a href="{{ route('students.index') }}" class="nav-link {{ Request::is('students*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
         <p>Students</p>
@@ -18,7 +18,7 @@
         <i class="nav-icon fas fa-home"></i>
         <p>Ammavadis</p>
     </a>
-</li>
+</li> --}}
 <hr/>
 <li class="nav-item">
 <form method="POST"  class="nav-link" action="{{ route('logout') }}">

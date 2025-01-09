@@ -31,9 +31,9 @@ class CmsTable extends DataTableComponent
             Column::make("Title", "title")
                 ->sortable()
                 ->searchable(),
-            Column::make("Slug", "slug")
-                ->sortable()
-                ->searchable(),
+            // Column::make("Slug", "slug")
+            //     ->sortable()
+            //     ->searchable(),
             Column::make("Parent", "parent")
                 ->sortable()
                 ->searchable(),
@@ -46,33 +46,33 @@ class CmsTable extends DataTableComponent
             Column::make("Banner Image", "banner_image")
                 ->sortable()
                 ->searchable(),
-            Column::make("Banner Title", "banner_title")
-                ->sortable()
-                ->searchable(),
-            Column::make("Banner Tagline", "banner_tagline")
-                ->sortable()
-                ->searchable(),
-            Column::make("Banner Description", "banner_description")
-                ->sortable()
-                ->searchable(),
-            Column::make("Content", "content")
-                ->sortable()
-                ->searchable(),
-            Column::make("Gallery", "gallery")
-                ->sortable()
-                ->searchable(),
-            Column::make("Main Menu", "main_menu")
-                ->sortable()
-                ->searchable(),
-            Column::make("Top Menu", "top_menu")
-                ->sortable()
-                ->searchable(),
-            Column::make("Side Menu", "side_menu")
-                ->sortable()
-                ->searchable(),
-            Column::make("Footer Menu", "footer_menu")
-                ->sortable()
-                ->searchable(),
+            // Column::make("Banner Title", "banner_title")
+            //     ->sortable()
+            //     ->searchable(),
+            // Column::make("Banner Tagline", "banner_tagline")
+            //     ->sortable()
+            //     ->searchable(),
+            // Column::make("Banner Description", "banner_description")
+            //     ->sortable()
+            //     ->searchable(),
+            // Column::make("Content", "content")
+            //     ->sortable()
+            //     ->searchable(),
+            // Column::make("Gallery", "gallery")
+            //     ->sortable()
+            //     ->searchable(),
+            // Column::make("Main Menu", "main_menu")
+            //     ->sortable()
+            //     ->searchable(),
+            // Column::make("Top Menu", "top_menu")
+            //     ->sortable()
+            //     ->searchable(),
+            // Column::make("Side Menu", "side_menu")
+            //     ->sortable()
+            //     ->searchable(),
+            // Column::make("Footer Menu", "footer_menu")
+            //     ->sortable()
+            //     ->searchable(),
             Column::make("Publish", "publish")
                 ->sortable()
                 ->searchable(),
@@ -85,5 +85,21 @@ class CmsTable extends DataTableComponent
                     ])
                 )
         ];
+    }
+
+    public function togglePublish($id)
+    {
+        $cms = Cms::find($id);
+        $cms->publish = !$cms->publish;
+        $cms->save();
+    }
+
+    public function reorder($items): void
+    {
+        foreach ($items as $item) {
+            $cms = Cms::find((int)$item['value']);
+            $cms->sort = $item['order'];
+            $cms->save();
+        }
     }
 }

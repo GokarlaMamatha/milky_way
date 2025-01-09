@@ -43,3 +43,5 @@ Route::resource('services', App\Http\Controllers\ServiceController::class);
 Route::resource('products', App\Http\Controllers\ProductsController::class);
 Route::resource('productCategories', App\Http\Controllers\ProductCategoryController::class);
 Route::resource('serviceCategories', App\Http\Controllers\ServiceCategoryController::class);
+
+Route::get('remove-multiple-cms-image-item/{id}/{key}', [App\Http\Controllers\CmsController::class, 'removeGalleryItem']);

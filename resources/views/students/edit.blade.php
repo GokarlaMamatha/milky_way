@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::model($student, ['route' => ['students.update', $student->id], 'method' => 'patch']) !!}
+            {!! Form::model($student, ['route' => ['students.update', $student->id], 'method' => 'patch','files' => true]) !!}
 
             <div class="card-body">
                 <div class="row">

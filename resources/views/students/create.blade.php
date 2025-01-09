@@ -19,7 +19,7 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'students.store']) !!}
+            {!! Form::open(['route' => 'students.store','files' => true]) !!}
 
             <div class="card-body">
 
